@@ -17,19 +17,22 @@ namespace SpecialDates
             while(today <  DateTime.Now.AddYears(1000))
             {
                 //Console.WriteLine(today.ToLongDateString());
-                /*
+                
                 if (today.Month == today.Day)
                 {
                     Console.WriteLine("Day = Month: " + today.ToLongDateString());
                 }
-                */
                 if ((today.Month == today.Day) && (today.Month == int.Parse(today.Year.ToString().Substring(2))))
                 {
                     Console.WriteLine("Day = Month = Year: " + today.ToLongDateString());
                 }
-
-
+                if (today.Day == int.Parse(today.Year.ToString().Substring(2)))
+                {
+                    Console.WriteLine("Day = Year: " + today.ToLongDateString());
+                }
+                
                 today = today.AddDays(1);
+
             }
 
             Console.ReadKey();
